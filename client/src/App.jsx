@@ -8,6 +8,7 @@ import Leave from "./pages/Leave"
 import Payslips from "./pages/Payslips"
 import LoginLanding from "./pages/LoginLanding"
 import PrintPayslip from "./pages/PrintPayslip"
+
 export const App = () => {
   return (
     <>
