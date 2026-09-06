@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import LoginLeftSide from "../components/LoginLeftSide"
+import { ArrowRightIcon, ShieldIcon, UserIcon } from "lucide-react"
 
 const LoginLanding = () => {
 
@@ -6,14 +8,18 @@ const LoginLanding = () => {
     {
 
       to: "/login/admin",
-      titel: "Amin Portal",
+      title: "Admin Portal",
       description: "Manage employess, departments, payroll, and system configuration.",
       icon: ShieldIcon //this is a lucid react icon
+    },
+    {
+
+      to: "/login/employee",
+      title: "Employee Portal",
+      description: "View your profile, track attendance, request time off, and access payslips",
+      icon: UserIcon //this is a user icon from lucid react icon
     }
   ]
-
-
-
 
 
   return (
@@ -35,6 +41,30 @@ const LoginLanding = () => {
             <p className="text-slTE-500">Select your portal to securely access the system.</p>
           </div>
           {/*Portal List*/}
+
+          <div className="space-y-4">
+            {portalOptions.map((portal)=>(
+              <Link key={portal.to}/*we added the key property and we added the .to because it is unique*/ 
+              to={portal.to}/* her we added the to property and portal.to so that it opens this path when we click here */
+              className="group block bg-slate-50 border 
+              border-slate-200 rounded-lg  p-5 sm:p-6
+              transition-all duration-300
+              hover:border-indigo-400 hover:bg-indigo-50">
+                <div className="relative z-10 flex items-center
+                justify-between gap-4 sm:gap-5">
+                  <h3 className="text-lg text-slate-800
+                  group-hover:text-indigo-600 mb-1
+                  transition-colors">{portal.title}</h3>
+                  <ArrowRightIcon className="w-4 h-4
+                  text-slate-400 group-hover:text-indigo-600
+                  group-hover:translate-x-1 transition-all
+                  duration-300"/>
+                </div>
+              </Link>// this is from react-router-dom
+
+            ))}
+
+          </div>
 
           {/* Footer */}
 
