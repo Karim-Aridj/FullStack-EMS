@@ -1,6 +1,21 @@
 import LoginLeftSide from "../components/LoginLeftSide"
 
 const LoginLanding = () => {
+
+  const portalOptions = [
+    {
+
+      to: "/login/admin",
+      titel: "Amin Portal",
+      description: "Manage employess, departments, payroll, and system configuration.",
+      icon: "ShieldIcon"
+    }
+  ]
+
+
+
+
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftSide />
@@ -14,6 +29,11 @@ const LoginLanding = () => {
 
           {/* Header*/}
 
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-medium text-slate-900
+            tracking-tight mb-3">Welcome Back</h2>
+            <p className="text-slTE-500">Select your portal to securely access the system.</p>
+          </div>
           {/*Portal List*/}
 
           {/* Footer */}
