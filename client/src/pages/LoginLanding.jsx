@@ -8,7 +8,7 @@ const LoginLanding = () => {
       to: "/login/admin",
       titel: "Amin Portal",
       description: "Manage employess, departments, payroll, and system configuration.",
-      icon: "ShieldIcon"
+      icon: ShieldIcon //this is a lucid react icon
     }
   ]
 
