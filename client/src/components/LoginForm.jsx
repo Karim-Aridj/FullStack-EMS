@@ -6,7 +6,9 @@ const LoginForm = ({role, title, subtitle}) => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftSide />
-      <div className="w-full max-w-md animate-fade-in">
+      <div className="flex-1 flex items-center justify-center p-6
+      sm:p-12 bg-white">
+        <div className="w-full max-w-md animate-fade-in">
         <Link to="/login" className="inline-flex items-center
         gap-2 text-slate-400 hover:text-slate-700 text-sm mb-10
         transtition-colors">
@@ -19,6 +21,8 @@ const LoginForm = ({role, title, subtitle}) => {
           <p>{subtitle}</p>
         </div>
       </div>
+      </div>
+      
 
     </div>
   )
