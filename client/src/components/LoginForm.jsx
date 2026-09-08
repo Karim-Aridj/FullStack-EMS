@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom"
 import LoginLeftSide from "./LoginLeftSide"
 import { ArrowLeftIcon } from "lucide-react"
+import { useState } from "react"
 
 const LoginForm = ({role, title, subtitle}) => {
+//we create the states to store the email id
+  const [email, settEmail] = useState("") //we create the state to store the email id
+  const [password, setPassword] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+//now we creat the handler fucntion to handl the submissions
+  const handleSubmit = async (e) => { //in the parameter we will get the event
+    e.preventDefault();// it will prevent the default behaviour that will stop the webpage from reloading
+  }
+
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftSide />
@@ -20,10 +33,17 @@ const LoginForm = ({role, title, subtitle}) => {
           texr-zinc-800">{title}</h1>
           <p>{subtitle}</p>
         </div>
+        {error && (
+          <div className="mb-6 p-4 bg-rose-50 border 
+          border-rose-200 text-rose-700 text-sm rounded-xl
+          flex items-start gap-3">
+            <div className="w-1.5 rounded-full
+            bg-rose-500 mt-1.5 shrink-0"/>
+            {error}
+          </div>
+        )}
       </div>
-      </div>
-      
-
+      </div>    
     </div>
   )
 }
