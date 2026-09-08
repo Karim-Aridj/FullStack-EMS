@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import LoginLeftSide from "./LoginLeftSide"
-import { ArrowLeftIcon } from "lucide-react"
+import { ArrowLeftIcon, EyeIcon, EyeOffIcon } from "lucide-react"
 import { useState } from "react"
 
 const LoginForm = ({role, title, subtitle}) => {
@@ -26,22 +26,53 @@ const LoginForm = ({role, title, subtitle}) => {
         gap-2 text-slate-400 hover:text-slate-700 text-sm mb-10
         transtition-colors">
            <ArrowLeftIcon size={16}/> Back to Portals
-
         </Link>
+
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-medium
           texr-zinc-800">{title}</h1>
           <p>{subtitle}</p>
         </div>
+
         {error && (
           <div className="mb-6 p-4 bg-rose-50 border 
           border-rose-200 text-rose-700 text-sm rounded-xl
           flex items-start gap-3">
-            <div className="w-1.5 rounded-full
+            <div className="w-1.5 h-1.5 rounded-full
             bg-rose-500 mt-1.5 shrink-0"/>
             {error}
           </div>
         )}
+       
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          <div>
+            <label className="block text-sm font-medium 
+            text-slate-700 mb-2">Email Address</label>
+            <input type="email" value={email} onChange={(e)=> settEmail(e.target.value)} required 
+            placeholder="john@example.com"/>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium 
+            text-slate-700 mb-2">Password</label>
+            <div className="relative">
+              <input type={showPassword ? 'text' : 
+              'password'} onChange={(e) => setPassword(e.
+               target.value)} required className='pr-11'
+               placeholder="••••••••"/>
+            <button type="button" className="absolute
+            right-3 top-1/2 -translate-y-1/2
+            text-slate-400 hover:text-slate-600
+            transition-colors" onClick={() => 
+              setShowPassword(!showPassword)}>
+              {showPassword ? <EyeOffIcon size={18}/>
+              : <EyeIcon size={18}/>/** in this onclick function
+            not off show passwrd so if its true it
+            will make it false and vise versa*/}
+            </button> 
+            </div>
+          </div>
+        </form>
       </div>
       </div>    
     </div>
