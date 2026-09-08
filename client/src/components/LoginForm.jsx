@@ -66,9 +66,7 @@ const LoginForm = ({role, title, subtitle}) => {
             transition-colors" onClick={() => 
               setShowPassword(!showPassword)}>
               {showPassword ? <EyeOffIcon size={18}/>
-              : <EyeIcon size={18}/>/** in this onclick function
-            not off show passwrd so if its true it
-            will make it false and vise versa*/}
+              : <EyeIcon size={18}/>}
             </button> 
             </div>
           </div>
