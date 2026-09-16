@@ -30,7 +30,7 @@ const Sidebar = () => {
     const navItems = [
       {name: "Dashboard", href: "/dashboard", icon: LayoutGridIcon},
       role === "ADMIN" ? 
-      {name: "Employees", href: "/emplpoyees", icon: UserIcon} :
+      {name: "Employees", href: "/employees", icon: UserIcon} :
       {name: "Attendance", href: "/attendance", icon: CalendarIcon},
       {name: "Leave", href: "/leave", icon: FileTextIcon},
       {name: "Payslips", href: "/payslips", icon: DollarSignIcon},
@@ -68,7 +68,7 @@ const Sidebar = () => {
          </div>
          {/** User Profile Card */}
          {userName && (
-          <div className='mx-3 mt-4 mb-1 p-3 rounded-lg bg-white/3 
+          <div className='mx-3 mt-4 mb-1 p-3 rounded-lg bg-white/5 
           border border-white/10'>
             <div className='flex items-center gap-3'>
               <div className='w-9 h-9 rounded-lg bg-slate-800
@@ -93,7 +93,7 @@ const Sidebar = () => {
          {/** Section Label */}
          <div className='px-5 pt-5 pb-2'>
           <p className='text-[10px] font-semibold uppercase tracking-[0.12em]
-          text-slate-500'>Navvigation</p>
+          text-slate-500'>Navigation</p>
          </div>
 
          {/** Navigation list */}
@@ -103,7 +103,7 @@ const Sidebar = () => {
             return (
               <Link key={item.name} to={item.href} className={`group flex items-center gap-3 px-3 py-2.5 
               rounded-md text-[13px] font-medium transition-all 
-              duration-150 relative${isActive ? "bg-indigo-500/12 text-indigo-300" : "text-slate-300 hover:text-white hover:bg-white/4"}`}>
+              duration-150 relative${isActive ? "bg-indigo-500/10 text-indigo-300" : "text-slate-300 hover:text-white hover:bg-white/5"}`}>
                 {isActive && <div className='absolute left-0
                 top-1/2 -translate-y-1/2 w-[3px] h-5
                 rounded-r-full bg-indigo-500'/>}
@@ -124,7 +124,7 @@ const Sidebar = () => {
          <div className='p-3 border-t border-white/6'>
          <button onClick={handleLogout} className='flex items-center gap-3 w-full px-3 py-2.5
          rounded-md text-[13px] font-medium text-slate-400
-         hover:text-rose-400 hover:bg-rose-500/8 transition-all
+         hover:text-rose-400 hover:bg-rose-500/10 transition-all
          duration-150'>
           <LogOutIcon className='w-[17px] h-[17px]'/>
           <span>Log Out</span>
@@ -141,7 +141,7 @@ const Sidebar = () => {
     <button onClick={()=>setMobileOpen(true)} className='lg:hidden 
     fixed top-4 left-4 z-50 p-2
     bg-slate-900 text-white rounded-lg shadow-lg border
-    border-white/10'>
+    border-white/6'>
       <MenuIcon size={20}/>
     </button>
 
@@ -157,7 +157,7 @@ const Sidebar = () => {
      {/**Sidebar - desktop */}
      <aside className='hidden lg:flex flex-col h-full w-[260px]
      bg-linear-to-b from-slate-900 via-slate-900 to-slate-950
-     text-white shrink-0 border-r border-white/10'>
+     text-white shrink-0 border-r border-white/6'>
       {sidebarContent}
      </aside>
 
